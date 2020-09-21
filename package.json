@@ -1,0 +1,47 @@
+{
+  "name": "eslint-config-logdna",
+  "version": "0.0.0",
+  "description": "LogDNA's preferred eslint config to be used across all projects",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./",
+    "tap": "tap",
+    "pretest": "npm run lint",
+    "test": "tap"
+  },
+  "eslintConfig": {
+    "root": true,
+    "ignorePatterns": [
+      "node_modules/",
+      "coverage/"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2019
+    }
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logdna/eslint-config-logdna.git"
+  },
+  "author": {
+    "name": "LogDNA, Inc.",
+    "email": "help@logdna.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/logdna/eslint-config-logdna/issues"
+  },
+  "homepage": "https://github.com/logdna/eslint-config-logdna#readme",
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "tap": "^14.10.7"
+  },
+  "dependencies": {
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-sensible": "^2.1.0"
+  }
+}
