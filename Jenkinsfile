@@ -122,6 +122,7 @@ pipeline {
         NPM_CONFIG_USERCONFIG = '.npm/rc'
         SPAWN_WRAP_SHIM_ROOT = '.npm'
         GITHUB_PACKAGES_TOKEN = credentials('github-api-token')
+        NPM_PUBLISH_TOKEN = credentials('npm-publish-token')
       }
 
       steps {
@@ -132,6 +133,7 @@ pipeline {
           token: "${GITHUB_PACKAGES_TOKEN}"
         , dry: false
         , repo: repo
+        , NPM_PUBLISH_TOKEN: "${NPM_PUBLISH_TOKEN}"
         )
       }
     }
