@@ -1,3 +1,7 @@
+# 2020-09-29, Version 1.0.2 (Stable)
+
+* [[4e5f33dc22](https://github.com/logdna/eslint-config-logdna/commit/4e5f33dc22)] - package: Fine-tune the .npmignore file (Darin Spivey)
+
 # 2020-09-28, Version 1.0.1 (Stable)
 
 * [[2680d5ca9b](https://github.com/logdna/eslint-config-logdna/commit/2680d5ca9b)] - ci: Test Jenkins publishing (Darin Spivey)
