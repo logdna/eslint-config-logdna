@@ -84,7 +84,7 @@
       }
     }],
     "linebreak-style": ["error", "unix"],
-    "max-len": [2, 160, {
+    "max-len": [2, 90, {
       "ignoreComments": true
     }],
     "no-alert": 2,
