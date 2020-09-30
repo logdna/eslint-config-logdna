@@ -1,5 +1,6 @@
 'use strict'
 
+// This is a very very long comment that should probably be on multiple line. But comments are ignored so this will not cause an error when the linter actually runs
 const path = require('path')
 const fs = require('fs')
 const {promisify} = require('util')
