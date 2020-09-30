@@ -1,3 +1,8 @@
+# 2020-09-30, Version 2.0.0 (Stable)
+
+* [[8b63b65158](https://github.com/logdna/eslint-config-logdna/commit/8b63b65158)] - fix(doc): add language annotation to code blocks in README (Eric Satterwhite)
+* [[5caf5796a6](https://github.com/logdna/eslint-config-logdna/commit/5caf5796a6)] - **(SEMVER-MAJOR)** feat!: drop max-len rule from 160 to 90 (Eric Satterwhite) [LOG-7437](https://logdna.atlassian.net/browse/LOG-7437)
+
 # 2020-09-29, Version 1.0.2 (Stable)
 
 * [[4e5f33dc22](https://github.com/logdna/eslint-config-logdna/commit/4e5f33dc22)] - package: Fine-tune the .npmignore file (Darin Spivey)
