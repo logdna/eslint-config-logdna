@@ -1,7 +1,8 @@
 library 'magic-butler-catalogue'
 
-def projectName = "eslint-config-logdna"
-def repo = "logdna/${projectName}"
+def PROJECT_NAME = "eslint-config-logdna"
+def REPO = "logdna/${PROJECT_NAME}"
+def TRIGGER_PATTERN = ".*@logdnabot.*"
 
 pipeline {
   agent none
@@ -11,7 +12,23 @@ pipeline {
     ansiColor 'xterm'
   }
 
+  triggers {
+    issueCommentTrigger(TRIGGER_PATTERN)
+  }
+
   stages {
+    stage('Validate PR Source') {
+      when {
+        expression { env.CHANGE_FORK }
+        not {
+          triggeredBy 'issueCommentCause'
+        }
+      }
+      steps {
+        error("A maintainer needs to approve this PR for CI by commenting")
+      }
+    }
+
     stage('Test Suite') {
       matrix {
         axes {
@@ -83,7 +100,7 @@ pipeline {
       agent {
         docker {
           image "us.gcr.io/logdna-k8s/node:12-ci"
-          customWorkspace "${projectName}-${BUILD_NUMBER}"
+          customWorkspace "${PROJECT_NAME}-${BUILD_NUMBER}"
         }
       }
 
@@ -99,7 +116,8 @@ pipeline {
         versioner(
           token: "${GITHUB_PACKAGES_TOKEN}"
         , dry: true
-        , repo: repo
+        , repo: REPO
+        , branch: "master"
         )
       }
     }
@@ -113,7 +131,7 @@ pipeline {
       agent {
         docker {
           image "us.gcr.io/logdna-k8s/node:12-ci"
-          customWorkspace "${projectName}-${BUILD_NUMBER}"
+          customWorkspace "${PROJECT_NAME}-${BUILD_NUMBER}"
         }
       }
 
@@ -132,8 +150,9 @@ pipeline {
         versioner(
           token: "${GITHUB_PACKAGES_TOKEN}"
         , dry: false
-        , repo: repo
+        , repo: REPO
         , NPM_PUBLISH_TOKEN: "${NPM_PUBLISH_TOKEN}"
+        , branch: "master"
         )
       }
     }
