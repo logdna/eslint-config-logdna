@@ -1,3 +1,7 @@
+# 2020-10-27, Version 2.0.1 (Stable)
+
+* [[d399bb2dfc](https://github.com/logdna/eslint-config-logdna/commit/d399bb2dfc)] - fix: add PR source validation to Jenkinsfile (Mike Del Tito) [LOG-7712](https://logdna.atlassian.net/browse/LOG-7712)
+
 # 2020-09-30, Version 2.0.0 (Stable)
 
 * [[8b63b65158](https://github.com/logdna/eslint-config-logdna/commit/8b63b65158)] - fix(doc): add language annotation to code blocks in README (Eric Satterwhite)
