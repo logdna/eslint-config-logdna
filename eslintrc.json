@@ -169,7 +169,8 @@
     "no-unused-labels": 2,
     "no-unused-vars": [2, {
       "vars": "all",
-      "args": "none"
+      "args": "none",
+      "ignoreRestSiblings": true
     }],
     "no-use-before-define": [2, {
       "functions": false
