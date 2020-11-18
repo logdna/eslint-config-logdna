@@ -1,3 +1,7 @@
+# 2020-11-18, Version 3.1.0 (Stable)
+
+* [[411e0cac72](https://github.com/logdna/eslint-config-logdna/commit/411e0cac72)] - **(SEMVER-MINOR)** feat: allow unused rest siblings (Michael J. Del Tito) [LOG-7154](https://logdna.atlassian.net/browse/LOG-7154)
+
 # 2020-11-18, Version 3.0.0 (Stable)
 
 * [[b6f3269db5](https://github.com/logdna/eslint-config-logdna/commit/b6f3269db5)] - **(SEMVER-MAJOR)** feat!: add eslint-plugin-logdna and associated config (Mike Del Tito)
