@@ -26,8 +26,9 @@ const isFoo = OPTIONS.FOO
   ? OPTIONS.BAR
   : OPTIONS.TEST
 
+const {TEST, BAR: notUsed, ...others} = OPTIONS
 function getOptions() {
-  return isFoo ? OPTIONS : null
+  return isFoo ? OPTIONS : others
 }
 
 function rand(bytes = 10, cb) {
