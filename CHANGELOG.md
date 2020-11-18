@@ -1,3 +1,7 @@
+# 2020-11-18, Version 3.0.0 (Stable)
+
+* [[b6f3269db5](https://github.com/logdna/eslint-config-logdna/commit/b6f3269db5)] - **(SEMVER-MAJOR)** feat!: add eslint-plugin-logdna and associated config (Mike Del Tito)
+
 # 2020-10-27, Version 2.0.1 (Stable)
 
 * [[d399bb2dfc](https://github.com/logdna/eslint-config-logdna/commit/d399bb2dfc)] - fix: add PR source validation to Jenkinsfile (Mike Del Tito) [LOG-7712](https://logdna.atlassian.net/browse/LOG-7712)
