@@ -5,11 +5,11 @@ const fs = require('fs')
 const {promisify} = require('util')
 const {test, threw} = require('tap')
 const {CLIEngine} = require('eslint')
-const CODE = path.join(__dirname, 'fixture')
+const VALID_CODE = path.join(__dirname, 'fixtures', 'valid-code')
 
 const readFile = promisify(fs.readFile)
 test('valid config', async (t) => {
-  const code = await readFile(CODE, 'utf8')
+  const code = await readFile(VALID_CODE, 'utf8')
   const cli = new CLIEngine({
     useEslintrc: false
   , configFile: 'eslintrc.json'
