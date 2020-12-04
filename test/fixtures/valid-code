@@ -64,7 +64,8 @@ function plugin(opts) {
   }
 }
 
-const noArrowFuncShorthand = (a) => { return a }
+const someArray = [1, 2, 3]
+console.log(someArray.map((a) => { return a + 1 }))
 
 module.exports = {
   ...OPTIONS
@@ -73,5 +74,4 @@ module.exports = {
 , getOptions
 , doWork
 , plugin
-, noArrowFuncShorthand
 }
