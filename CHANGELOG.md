@@ -1,3 +1,11 @@
+# 2020-12-04, Version 4.0.0 (Stable)
+
+* [[deb2012c76](https://github.com/logdna/eslint-config-logdna/commit/deb2012c76)] - **(SEMVER-MAJOR)** feat(rules)!: func-style disallows function expressions (Darin Spivey) [LOG-8207](https://logdna.atlassian.net/browse/LOG-8207)
+* [[1f665218c7](https://github.com/logdna/eslint-config-logdna/commit/1f665218c7)] - feat(test): Fix JUnit file so CI can report errors (Darin Spivey)
+* [[6f8bcc12ea](https://github.com/logdna/eslint-config-logdna/commit/6f8bcc12ea)] - **(SEMVER-MINOR)** feat(rules): arrow-body-style enforces braces around arrow functions (Darin Spivey) [LOG-8207](https://logdna.atlassian.net/browse/LOG-8207)
+* [[f14276f30e](https://github.com/logdna/eslint-config-logdna/commit/f14276f30e)] - **(SEMVER-MINOR)** feat(rules): arrow-parens are always required (Darin Spivey) [LOG-8207](https://logdna.atlassian.net/browse/LOG-8207)
+* [[f912dc11d0](https://github.com/logdna/eslint-config-logdna/commit/f912dc11d0)] - chore: Put test fixtures in one directory (Darin Spivey) [LOG-8207](https://logdna.atlassian.net/browse/LOG-8207)
+
 # 2020-11-18, Version 3.1.0 (Stable)
 
 * [[411e0cac72](https://github.com/logdna/eslint-config-logdna/commit/411e0cac72)] - **(SEMVER-MINOR)** feat: allow unused rest siblings (Michael J. Del Tito) [LOG-7154](https://logdna.atlassian.net/browse/LOG-7154)
