@@ -50,6 +50,7 @@
     }],
     "eol-last": [2, "always"],
     "eqeqeq": [2, "allow-null"],
+    "func-style": ["error", "declaration"],
     "handle-callback-err": [2, "^(error|err|er)"],
     "guard-for-in": 2,
     "indent": 0,
