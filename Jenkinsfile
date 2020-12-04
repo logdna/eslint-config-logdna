@@ -55,24 +55,18 @@ pipeline {
 
             steps {
               sh 'mkdir -p .npm'
-              sh """
-              npm install
-              """
+              sh 'npm install'
             }
           }
 
           stage('Test') {
             steps {
-              sh 'node -v'
-              sh 'npm -v'
-              sh 'npm test'
+              sh 'npm run test'
             }
 
             post {
               always {
-                sh 'cat .tap | ./node_modules/.bin/tap-mocha-reporter xunit > coverage/test.xml'
-
-                junit 'coverage/test.xml'
+                junit checksName: 'Test Results', testResults: 'coverage/test.xml'
 
                 publishHTML target: [
                   allowMissing: false,

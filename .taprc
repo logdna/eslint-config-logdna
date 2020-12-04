@@ -6,7 +6,7 @@ check-coverage: true
 reporter: classic
 nyc-arg:
 - --all=true
-output-file: .tap
+output-file: coverage/.tap-output
 coverage-report:
 - text
 - text-summary
