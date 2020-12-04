@@ -64,6 +64,8 @@ function plugin(opts) {
   }
 }
 
+const noArrowFuncShorthand = (a) => { return a }
+
 module.exports = {
   ...OPTIONS
 , EXP
@@ -71,4 +73,5 @@ module.exports = {
 , getOptions
 , doWork
 , plugin
+, noArrowFuncShorthand
 }
