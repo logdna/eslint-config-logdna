@@ -96,4 +96,19 @@ test('Invlalid linting with quick-and-dirty inline code', async (t) => {
     , 'Error message is correct'
     )
   })
+
+  t.test('arrow-body-style', async (t) => {
+    const code = 'const noBraces = (param) => param + 1'
+
+    const result = cli.executeOnText(code)
+    t.equal(result.errorCount, 1, 'error count')
+    const messages = result.results[0].messages
+
+    t.equal(messages[0].ruleId, 'arrow-body-style', 'arrow-body-style is the rule id')
+    t.equal(
+      messages[0].message
+    , 'Expected block statement surrounding arrow body.'
+    , 'Error message is correct'
+    )
+  })
 })
