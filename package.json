@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./",
-    "tap": "tap",
     "pretest": "npm run lint",
-    "test": "tap"
+    "test": "tools/test.sh"
   },
   "eslintConfig": {
     "root": true,
@@ -38,7 +37,8 @@
   "homepage": "https://github.com/logdna/eslint-config-logdna#readme",
   "devDependencies": {
     "eslint": "^7.9.0",
-    "tap": "^14.10.7"
+    "tap": "^14.10.7",
+    "tap-xunit": "^2.4.1"
   },
   "dependencies": {
     "eslint-plugin-logdna": "^1.0.0",
