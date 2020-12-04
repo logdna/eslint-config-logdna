@@ -23,9 +23,7 @@
     "accessor-pairs": 0,
     "array-bracket-spacing": [2, "never"],
     "array-callback-return": 2,
-    "arrow-parens": ["error", "as-needed", {
-      "requireForBlockBody": true
-    }],
+    "arrow-parens": ["error", "always"],
     "block-scoped-var": 2,
     "block-spacing": [2, "always"],
     "brace-style": [2, "1tbs", {
@@ -221,7 +219,6 @@
       "functionPrototypeMethods": false
     }],
     "yoda": 0,
-    "sensible/check-require": [2, "always"],
     "logdna/grouped-require": 2,
     "logdna/require-file-extension": 2,
     "logdna/tap-consistent-assertions": [2, {
@@ -237,6 +234,7 @@
         "notMatch": "notMatch",
         "type": "type"
       }
-    }]
+    }],
+    "sensible/check-require": [2, "always"]
   }
 }

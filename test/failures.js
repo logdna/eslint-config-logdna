@@ -9,7 +9,7 @@ const MAX_LEN_CODE = path.join(__dirname, 'fixtures', 'max-len-fixture')
 const LOGDNA_PLUGIN_CODE = path.join(__dirname, 'fixtures', 'logdna-plugin-fixture')
 
 const readFile = fs.promises.readFile
-test('invalid config', async (t) => {
+test('Invalid linting for larger code blocks read from fixtures', async (t) => {
   const cli = new CLIEngine({
     useEslintrc: false
   , cwd: __dirname
@@ -68,3 +68,32 @@ test('invalid config', async (t) => {
     )
   })
 }).catch(threw)
+
+test('Invlalid linting with quick-and-dirty inline code', async (t) => {
+  const cli = new CLIEngine({
+    useEslintrc: false
+  , cwd: __dirname
+  , configFile: '../eslintrc.json'
+  , rules: {
+      'strict': 'off'
+    , 'sensible/indent': 'off'
+    , 'eol-last': 'off'
+    , 'no-unused-vars': 'off'
+    }
+  })
+
+  t.test('arrow-parens', async (t) => {
+    const code = '[].map(thing => { return thing + 1 })'
+
+    const result = cli.executeOnText(code)
+    t.equal(result.errorCount, 1, 'error count')
+    const messages = result.results[0].messages
+
+    t.equal(messages[0].ruleId, 'arrow-parens', 'arrow-parens is the rule id')
+    t.equal(
+      messages[0].message
+    , 'Expected parentheses around arrow function argument.'
+    , 'Error message is correct'
+    )
+  })
+})
