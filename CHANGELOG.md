@@ -1,3 +1,7 @@
+# 2020-12-21, Version 4.0.1 (Stable)
+
+* [[d1a40f3572](https://github.com/logdna/eslint-config-logdna/commit/d1a40f3572)] - chore(test): Read fixtures with eslint rather than fs (Darin Spivey)
+
 # 2020-12-04, Version 4.0.0 (Stable)
 
 * [[deb2012c76](https://github.com/logdna/eslint-config-logdna/commit/deb2012c76)] - **(SEMVER-MAJOR)** feat(rules)!: func-style disallows function expressions (Darin Spivey) [LOG-8207](https://logdna.atlassian.net/browse/LOG-8207)
