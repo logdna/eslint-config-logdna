@@ -43,6 +43,6 @@
   "dependencies": {
     "eslint-plugin-logdna": "^1.0.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-sensible": "^2.1.0"
+    "eslint-plugin-sensible": "^2.2.1"
   }
 }
