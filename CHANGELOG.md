@@ -1,3 +1,7 @@
+# 2020-12-31, Version 4.0.2 (Stable)
+
+* [[9100518359](https://github.com/logdna/eslint-config-logdna/commit/9100518359)] - chore(deps): eslint-plugin-sensible@2.2.1 (Eric Satterwhite)
+
 # 2020-12-21, Version 4.0.1 (Stable)
 
 * [[d1a40f3572](https://github.com/logdna/eslint-config-logdna/commit/d1a40f3572)] - chore(test): Read fixtures with eslint rather than fs (Darin Spivey)
