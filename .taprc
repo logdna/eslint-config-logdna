@@ -1,6 +1,7 @@
 esm: false
 ts: false
 jsx: false
+browser: false
 check-coverage: true
 100: true
 reporter: classic

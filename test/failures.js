@@ -26,6 +26,12 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
     t.match(messages[0].message, /maximum allowed is 90/ig, 'message expected line length')
   })
 
+  t.test('no-debugger', async (t) => {
+    const result = cli.executeOnFiles(['no-debugger-fixture'])
+    t.equal(result.errorCount, 1, 'error count')
+    t.equal(result.results[0].messages[0].ruleId, 'no-debugger', 'missing newline')
+  })
+
   t.test('plugin-logdna', async (t) => {
     const result = cli.executeOnFiles(['logdna-plugin-fixture'])
     const messages = result.results[0].messages
