@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/logdna/eslint-config-logdna#readme",
   "devDependencies": {
-    "eslint": "^7.9.0",
+    "eslint": "^7.19.0",
     "tap": "^14.10.7",
     "tap-xunit": "^2.4.1"
   },
