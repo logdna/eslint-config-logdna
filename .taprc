@@ -11,6 +11,8 @@ output-file: coverage/.tap-output
 coverage-report:
 - text
 - text-summary
+- json
+- json-summary
 - html
 files:
 - test/*.js

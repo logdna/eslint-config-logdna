@@ -1,7 +1,7 @@
 'use strict'
 
-const config = require('../index.js')
 const {test, threw} = require('tap')
+const config = require('../index.js')
 
 function isObject(obj) {
   return typeof obj === 'object' && obj !== null
