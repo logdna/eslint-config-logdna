@@ -9,11 +9,17 @@
     "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 2019,
+    "ecmaVersion": 2020,
+    "sourceType": "script",
     "ecmaFeatures": {
       "globalReturn": true
     }
   },
+  "ignorePatterns": [
+    "node_modules/",
+    "coverage/",
+    ".nyc_output"
+  ],
   "plugins": [
     "node",
     "sensible",

@@ -12,9 +12,9 @@ test('valid config', async (t) => {
   const code = await readFile(VALID_CODE, 'utf8')
   const cli = new CLIEngine({
     useEslintrc: false
-  , configFile: 'eslintrc.json'
+  , configFile: '.eslintrc.json'
   })
 
   const result = cli.executeOnText(code)
-  t.equal(result.errorCount, 0, 'error count')
+  t.strictEqual(result.errorCount, 0, 'error count')
 }).catch(threw)
