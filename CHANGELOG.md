@@ -1,3 +1,8 @@
+# 2021-03-20, Version 4.1.0 (Stable)
+
+* [[1d66479244](https://github.com/logdna/eslint-config-logdna/commit/1d66479244)] - **(SEMVER-MINOR)** feat(rules): enable rule to dis-allow debugger statements. (Eric Satterwhite)
+* [[e7bca6ff2b](https://github.com/logdna/eslint-config-logdna/commit/e7bca6ff2b)] - chore(deps): eslint@7.19.0 (Eric Satterwhite)
+
 # 2020-12-31, Version 4.0.2 (Stable)
 
 * [[9100518359](https://github.com/logdna/eslint-config-logdna/commit/9100518359)] - chore(deps): eslint-plugin-sensible@2.2.1 (Eric Satterwhite)
