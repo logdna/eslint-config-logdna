@@ -1,3 +1,11 @@
+# 2021-03-23, Version 4.2.0 (Stable)
+
+* [[a0339e7211](https://github.com/logdna/eslint-config-logdna/commit/a0339e7211)] - **(SEMVER-MINOR)** feat(package): enable ecmascript 2020 (Eric Satterwhite)
+* [[7c980a6458](https://github.com/logdna/eslint-config-logdna/commit/7c980a6458)] - docs: include code of conduct and contributing guides (Eric Satterwhite)
+* [[a9dddd782d](https://github.com/logdna/eslint-config-logdna/commit/a9dddd782d)] - docs: add @mdeltito as a contributor (Eric Satterwhite)
+* [[e8c57e06b7](https://github.com/logdna/eslint-config-logdna/commit/e8c57e06b7)] - docs: add @darinspivey as a contributor (Eric Satterwhite)
+* [[2493b1256f](https://github.com/logdna/eslint-config-logdna/commit/2493b1256f)] - docs: add @esatterwhite as a contributor (Eric Satterwhite)
+
 # 2021-03-20, Version 4.1.0 (Stable)
 
 * [[1d66479244](https://github.com/logdna/eslint-config-logdna/commit/1d66479244)] - **(SEMVER-MINOR)** feat(rules): enable rule to dis-allow debugger statements. (Eric Satterwhite)
