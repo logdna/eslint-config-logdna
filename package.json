@@ -8,6 +8,7 @@
     "lint": "eslint ./",
     "pretest": "npm run lint",
     "test": "tools/test.sh",
+    "tap": "tap",
     "release": "semantic-release",
     "release:dry": "npm run release -- --dry-run --no-ci --branches ${BRANCH_NAME:-main}"
   },
@@ -41,7 +42,7 @@
     "tap-xunit": "^2.4.1"
   },
   "dependencies": {
-    "eslint-plugin-logdna": "^1.0.0",
+    "eslint-plugin-logdna": "^2.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-sensible": "^2.3.1"
   }

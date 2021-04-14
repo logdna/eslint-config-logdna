@@ -16,5 +16,5 @@ test('valid config', async (t) => {
   })
 
   const result = cli.executeOnText(code)
-  t.strictEqual(result.errorCount, 0, 'error count')
+  t.equal(result.errorCount, 0, 'error count')
 }).catch(threw)
