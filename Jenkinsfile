@@ -3,6 +3,8 @@ library 'magic-butler-catalogue'
 def PROJECT_NAME = "eslint-config-logdna"
 def REPO = "logdna/${PROJECT_NAME}"
 def TRIGGER_PATTERN = ".*@logdnabot.*"
+def CURRENT_BRANCH = [env.CHANGE_BRANCH, env.BRANCH_NAME]?.find{branch -> branch != null}
+def DEFAULT_BRANCH = 'main'
 
 pipeline {
   agent none
@@ -34,7 +36,7 @@ pipeline {
         axes {
           axis {
             name 'NODE_VERSION'
-            values '10', '12', '14'
+            values '12', '14', '15'
           }
         }
 
@@ -51,16 +53,10 @@ pipeline {
         }
 
         stages {
-          stage('Install') {
-
-            steps {
-              sh 'mkdir -p .npm'
-              sh 'npm install'
-            }
-          }
-
           stage('Test') {
             steps {
+              sh 'mkdir -p .npm coverage'
+              sh 'npm install'
               sh 'npm run test'
             }
 
@@ -87,7 +83,7 @@ pipeline {
       when {
         beforeAgent true
         not {
-          branch 'master'
+          branch DEFAULT_BRANCH
         }
       }
 
@@ -99,27 +95,27 @@ pipeline {
       }
 
       environment {
-        GITHUB_PACKAGES_TOKEN = credentials('github-api-token')
         NPM_CONFIG_CACHE = '.npm'
         NPM_CONFIG_USERCONFIG = '.npm/rc'
         SPAWN_WRAP_SHIM_ROOT = '.npm'
+        GITHUB_TOKEN = credentials('github-api-token')
+        NPM_TOKEN = credentials('npm-publish-token')
+        GIT_BRANCH = "${CURRENT_BRANCH}"
+        BRANCH_NAME = "${CURRENT_BRANCH}"
+        CHANGE_ID = ""
       }
 
       steps {
         sh 'mkdir -p .npm'
-        versioner(
-          token: "${GITHUB_PACKAGES_TOKEN}"
-        , dry: true
-        , repo: REPO
-        , branch: "master"
-        )
+        sh 'npm install'
+        sh "npm run release:dry"
       }
     }
 
     stage('Release') {
       when {
         beforeAgent true
-        branch 'master'
+        branch DEFAULT_BRANCH
       }
 
       agent {
@@ -133,21 +129,14 @@ pipeline {
         NPM_CONFIG_CACHE = '.npm'
         NPM_CONFIG_USERCONFIG = '.npm/rc'
         SPAWN_WRAP_SHIM_ROOT = '.npm'
-        GITHUB_PACKAGES_TOKEN = credentials('github-api-token')
-        NPM_PUBLISH_TOKEN = credentials('npm-publish-token')
+        GITHUB_TOKEN = credentials('github-api-token')
+        NPM_TOKEN = credentials('npm-publish-token')
       }
 
       steps {
         sh 'mkdir -p .npm'
-        sh "git checkout -b ${GIT_BRANCH} origin/${GIT_BRANCH}"
-
-        versioner(
-          token: "${GITHUB_PACKAGES_TOKEN}"
-        , dry: false
-        , repo: REPO
-        , NPM_PUBLISH_TOKEN: "${NPM_PUBLISH_TOKEN}"
-        , branch: "master"
-        )
+        sh 'npm install'
+        sh 'npm run release'
       }
     }
   }
