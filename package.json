@@ -7,10 +7,9 @@
   "scripts": {
     "lint": "eslint ./",
     "pretest": "npm run lint",
-    "test": "tools/test.sh"
-  },
-  "publishConfig": {
-    "access": "public"
+    "test": "tools/test.sh",
+    "release": "semantic-release",
+    "release:dry": "npm run release -- --dry-run --no-ci --branches ${BRANCH_NAME:-main}"
   },
   "repository": {
     "type": "git",
@@ -28,8 +27,16 @@
     "url": "https://github.com/logdna/eslint-config-logdna/issues"
   },
   "homepage": "https://github.com/logdna/eslint-config-logdna#readme",
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "extends": "semantic-release-config-logdna"
+  },
   "devDependencies": {
     "eslint": "^7.19.0",
+    "semantic-release": "^17.4.2",
+    "semantic-release-config-logdna": "^1.1.1",
     "tap": "^14.10.7",
     "tap-xunit": "^2.4.1"
   },
