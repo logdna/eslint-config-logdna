@@ -1,3 +1,17 @@
+## Changelog
+
+## [4.2.1](https://github.com/logdna/eslint-config-logdna/compare/v4.2.0...v4.2.1) (2021-04-16)
+
+
+### Chores
+
+* **deps**: eslint-plugin-sensible@2.3.1 [93fd2a4](https://github.com/logdna/eslint-config-logdna/commit/93fd2a4b7f7c153e78689e8adda794d91805b340) - Eric Satterwhite
+
+
+### Continuous Integration
+
+* use semantic-release [1518b41](https://github.com/logdna/eslint-config-logdna/commit/1518b41fbad59c4047cedf3271693c0687049f2b) - Mike Del Tito
+
 # 2021-03-23, Version 4.2.0 (Stable)
 
 * [[a0339e7211](https://github.com/logdna/eslint-config-logdna/commit/a0339e7211)] - **(SEMVER-MINOR)** feat(package): enable ecmascript 2020 (Eric Satterwhite)
