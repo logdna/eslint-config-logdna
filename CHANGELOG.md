@@ -1,5 +1,26 @@
 ## Changelog
 
+# [5.0.0](https://github.com/logdna/eslint-config-logdna/compare/v4.2.1...v5.0.0) (2021-04-16)
+
+
+### Features
+
+* **rules**: switch to tap-no-deprecated-aliases rule [9ee6480](https://github.com/logdna/eslint-config-logdna/commit/9ee64807d7056ae42988c5597ca19695cbc12960) - Mike Del Tito
+
+
+### **BREAKING CHANGES**
+
+* **rules:** Un-aliased tap assertion methods will now be enforced
+
+tap@15.0.0 deprecated the use of aliases for assertion methods, which
+invalidates the concept of a "preferred" alias. This switches over to
+a new rule for requiring the use of un-aliased assertion methods.
+
+This rule is auto-fixable, and the changes it enforces are backwards
+compatible with older versions of tap.
+
+Ref: LOG-9396
+
 ## [4.2.1](https://github.com/logdna/eslint-config-logdna/compare/v4.2.0...v4.2.1) (2021-04-16)
 
 
