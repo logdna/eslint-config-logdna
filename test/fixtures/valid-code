@@ -27,7 +27,11 @@ const isFoo = OPTIONS.FOO
   : OPTIONS.TEST
 
 const {TEST, BAR: notUsed, ...others} = OPTIONS
+
+const BAR = OPTIONS?.TEST?.BAZ
+
 function getOptions() {
+  if (BAR) return BAR
   return isFoo ? OPTIONS : others
 }
 
