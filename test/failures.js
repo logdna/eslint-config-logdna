@@ -30,6 +30,19 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
     )
   })
 
+  t.test('no-multiple-empty-lines', async (t) => {
+    const result = cli.executeOnFiles(['no-multiple-empty-lines-fixture'])
+    t.equal(result.errorCount, 1, 'error count')
+    const messages = result.results[0].messages
+
+    t.equal(messages[0].ruleId, 'no-multiple-empty-lines', 'multiple empty found')
+    t.match(
+      messages[0].message
+    , /more than 1 blank line not allowed/ig
+    , 'message expected multiple empty'
+    )
+  })
+
   t.test('no-debugger', async (t) => {
     const result = cli.executeOnFiles(['no-debugger-fixture'])
     t.equal(result.errorCount, 1, 'error count')
