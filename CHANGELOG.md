@@ -1,5 +1,12 @@
 ## Changelog
 
+# [5.1.0](https://github.com/logdna/eslint-config-logdna/compare/v5.0.0...v5.1.0) (2021-05-31)
+
+
+### Features
+
+* **rules**: add no-multiple-empty-lines rule [29a8c68](https://github.com/logdna/eslint-config-logdna/commit/29a8c68c5d05181256c3422326b8001086de672d) - Mike Del Tito
+
 # [5.0.0](https://github.com/logdna/eslint-config-logdna/compare/v4.2.1...v5.0.0) (2021-04-16)
 
 
