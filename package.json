@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/logdna/eslint-config-logdna.git"
+    "url": "git+ssh://git@github.com/logdna/eslint-config-logdna.git"
   },
   "author": {
     "name": "LogDNA, Inc.",
@@ -35,7 +35,7 @@
     "extends": "semantic-release-config-logdna"
   },
   "devDependencies": {
-    "eslint": "^7.19.0",
+    "eslint": "^8.1.0",
     "semantic-release": "^17.4.2",
     "semantic-release-config-logdna": "^1.1.1",
     "tap": "^14.10.7",
@@ -44,6 +44,6 @@
   "dependencies": {
     "eslint-plugin-logdna": "^2.0.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-sensible": "^2.3.1"
+    "eslint-plugin-sensible": "^3.0.0"
   }
 }
