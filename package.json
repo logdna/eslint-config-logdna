@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-logdna",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "description": "LogDNA's preferred eslint config to be used across all projects",
   "main": "index.js",
   "private": false,

@@ -1,5 +1,18 @@
 ## Changelog
 
+# [6.0.0](https://github.com/logdna/eslint-config-logdna/compare/v5.1.0...v6.0.0) (2021-11-03)
+
+
+### Chores
+
+* **deps**: eslint-plugin-sensible@3.0.0 [d74acfe](https://github.com/logdna/eslint-config-logdna/commit/d74acfe1a4e6cc18de27ffd375ce440c1c2fd06c) - Eric Satterwhite
+
+
+### **BREAKING CHANGES**
+
+* **deps:** Minimum eslint version 8.x
+* **deps:** Mimimum node.js version 12.x
+
 # [5.1.0](https://github.com/logdna/eslint-config-logdna/compare/v5.0.0...v5.1.0) (2021-05-31)
 
 
