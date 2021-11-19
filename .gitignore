@@ -64,3 +64,5 @@ typings/
 *.vim
 *.swp
 .tap
+
+tmp/

@@ -139,6 +139,8 @@ pipeline {
         sh 'mkdir -p .npm'
         sh 'npm install'
         sh 'npm run release'
+        sh 'make build-image'
+        sh 'make publish-image'
       }
     }
   }
