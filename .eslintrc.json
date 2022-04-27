@@ -57,6 +57,8 @@
     "eol-last": [2, "always"],
     "eqeqeq": [2, "allow-null"],
     "func-style": ["error", "declaration"],
+    "function-call-argument-newline": ["error", "consistent"],
+    "function-paren-newline": ["error", "multiline-arguments"],
     "handle-callback-err": [2, "^(error|err|er)"],
     "guard-for-in": 2,
     "indent": 0,

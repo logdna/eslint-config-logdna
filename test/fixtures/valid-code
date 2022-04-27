@@ -64,6 +64,33 @@ function plugin(opts) {
   }
 }
 
+function useLotsOfParameters(
+  a
+, b
+, c
+) {
+  console.log(a)
+  console.log(b)
+  console.log(c)
+}
+
+useLotsOfParameters(
+  'here is some text'
+, 'and some more text'
+, 'and a third param of text'
+)
+
+useLotsOfParameters('this is', 'also valid', 'param usage')
+
+useLotsOfParameters('a', 'b', {
+  a: 'a'
+, b: 'b'
+})
+
+useLotsOfParameters('a', 'b', (c) => {
+  console.log(c)
+})
+
 const someArray = [1, 2, 3]
 console.log(someArray.map((a) => { return a + 1 }))
 
