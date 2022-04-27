@@ -1,0 +1,29 @@
+'use strict'
+
+module.exports = fooBar
+
+function fooBar(a
+, b
+, c
+) {
+  return true
+}
+
+fooBar(
+  'asdf'
+, 'ghjk'
+, 'asdfghjk'
+)
+
+function twoBar(
+  a
+, b, c
+) {
+  return true
+}
+
+twoBar(
+  'asdf'
+, 'ghjk'
+, 'asdfghjk'
+)

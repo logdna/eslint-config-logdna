@@ -116,9 +116,51 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
     , 'message expected non-deprecated method'
     )
   })
+
+  t.test('function-call-argument-newline', async (t) => {
+    const [result] = await linter.lintFiles(['function-call-argument-newline-fixture'])
+    const messages = result.messages
+    t.equal(result.errorCount, 3, 'error count')
+
+    t.equal(
+      messages[0].message
+    , 'Expected newline after \'(\'.'
+    , 'fooBar call 1: first param should be on separate line from function'
+    )
+
+    t.equal(
+      messages[1].message
+    , 'Expected newline between arguments/params.'
+    , 'fooBar call 2: second param should be followed by newline'
+    )
+
+    t.equal(
+      messages[2].message
+    , 'There should be a line break after this argument.'
+    , 'fooBar call 2: space after second param should be newline'
+    )
+  })
+
+  t.test('function-paren-newline', async (t) => {
+    const [result] = await linter.lintFiles(['function-paren-newline-fixture'])
+    const messages = result.messages
+    t.equal(result.errorCount, 2, 'error count')
+
+    t.equal(
+      messages[0].message
+    , 'Expected newline after \'(\'.'
+    , 'fooBar definition: first param should be on new line'
+    )
+
+    t.equal(
+      messages[1].message
+    , 'Expected newline between arguments/params.'
+    , 'twoBar definition: all params should be on own lines'
+    )
+  })
 }).catch(threw)
 
-test('Invlalid linting with quick-and-dirty inline code', async (t) => {
+test('Invalid linting with quick-and-dirty inline code', async (t) => {
   const linter = new ESLint({
     useEslintrc: false
   , cwd: __dirname
