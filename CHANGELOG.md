@@ -1,5 +1,12 @@
 ## Changelog
 
+# [6.1.0](https://github.com/logdna/eslint-config-logdna/compare/v6.0.0...v6.1.0) (2022-04-30)
+
+
+### Features
+
+* **rules**: consistent func param newlines [8f57501](https://github.com/logdna/eslint-config-logdna/commit/8f5750153f57a7d4fa3aeb9bfa183ad48595cafe) - Eric Satterwhite
+
 # [6.0.0](https://github.com/logdna/eslint-config-logdna/compare/v5.1.0...v6.0.0) (2021-11-03)
 
 
