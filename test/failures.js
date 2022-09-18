@@ -56,23 +56,23 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
 
     t.equal(
       messages[0].ruleId
-    , 'logdna/require-file-extension'
+    , 'sensible/check-require'
     , 'file extension required'
     )
     t.equal(
       messages[0].message
-    , 'Missing file extension for local module.'
+    , 'Missing require: ./test/basic. Path does not exist'
     , 'message expected file extension'
     )
 
     t.equal(
       messages[1].ruleId
-    , 'sensible/check-require'
+    , 'logdna/require-file-extension'
     , 'required module is missing'
     )
     t.equal(
       messages[1].message
-    , 'Missing require: ./test/basic. Path does not exist'
+    , 'Missing file extension for local module.'
     , 'message expected for missing module'
     )
 
