@@ -1,5 +1,12 @@
 ## Changelog
 
+## [6.1.2](https://github.com/logdna/eslint-config-logdna/compare/v6.1.1...v6.1.2) (2022-09-19)
+
+
+### Chores
+
+* Update eslint-plugin-logdna to 2.0.1 [c93492b](https://github.com/logdna/eslint-config-logdna/commit/c93492ba4dc4e16b140e98af1d0c9f2d2a5cf181) - Eric Satterwhite, closes: [#23](https://github.com/logdna/eslint-config-logdna/issues/23)
+
 ## [6.1.1](https://github.com/logdna/eslint-config-logdna/compare/v6.1.0...v6.1.1) (2022-09-19)
 
 
