@@ -1,7 +1,7 @@
 # eslint-config-logdna
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 LogDNA's preferred ESLint configuration for Node.js projects. Compatible with ESLint 9+ and 10+.
@@ -52,11 +52,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="http://codedependant.net/"><img src="https://avatars.githubusercontent.com/u/148561?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eric Satterwhite</b></sub></a><br /><a href="https://github.com/logdna/eslint-config-logdna/commits?author=esatterwhite" title="Documentation">📖</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=esatterwhite" title="Code">💻</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=esatterwhite" title="Tests">⚠️</a> <a href="#maintenance-esatterwhite" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/darinspivey"><img src="https://avatars.githubusercontent.com/u/1874788?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Darin Spivey</b></sub></a><br /><a href="https://github.com/logdna/eslint-config-logdna/commits?author=darinspivey" title="Documentation">📖</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=darinspivey" title="Code">💻</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=darinspivey" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://github.com/mdeltito"><img src="https://avatars.githubusercontent.com/u/69520?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mike Del Tito</b></sub></a><br /><a href="https://github.com/logdna/eslint-config-logdna/commits?author=mdeltito" title="Documentation">📖</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=mdeltito" title="Code">💻</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=mdeltito" title="Tests">⚠️</a> <a href="#maintenance-mdeltito" title="Maintenance">🚧</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center"><a href="http://codedependant.net/"><img src="https://avatars.githubusercontent.com/u/148561?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eric Satterwhite</b></sub></a><br /><a href="https://github.com/logdna/eslint-config-logdna/commits?author=esatterwhite" title="Documentation">📖</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=esatterwhite" title="Code">💻</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=esatterwhite" title="Tests">⚠️</a> <a href="#maintenance-esatterwhite" title="Maintenance">🚧</a></td>
+      <td align="center"><a href="https://github.com/darinspivey"><img src="https://avatars.githubusercontent.com/u/1874788?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Darin Spivey</b></sub></a><br /><a href="https://github.com/logdna/eslint-config-logdna/commits?author=darinspivey" title="Documentation">📖</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=darinspivey" title="Code">💻</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=darinspivey" title="Tests">⚠️</a></td>
+      <td align="center"><a href="https://github.com/mdeltito"><img src="https://avatars.githubusercontent.com/u/69520?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mike Del Tito</b></sub></a><br /><a href="https://github.com/logdna/eslint-config-logdna/commits?author=mdeltito" title="Documentation">📖</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=mdeltito" title="Code">💻</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=mdeltito" title="Tests">⚠️</a> <a href="#maintenance-mdeltito" title="Maintenance">🚧</a></td>
+      <td align="center"><a href="https://biblicalph.github.io"><img src="https://avatars.githubusercontent.com/u/3032519?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kwabena</b></sub></a><br /><a href="#maintenance-biblicalph" title="Maintenance">🚧</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
