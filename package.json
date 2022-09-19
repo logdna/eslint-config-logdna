@@ -42,7 +42,7 @@
     "tap-xunit": "^2.4.1"
   },
   "dependencies": {
-    "eslint-plugin-logdna": "^2.0.0",
+    "eslint-plugin-logdna": "^2.0.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-sensible": "^3.0.1"
   }
