@@ -6,7 +6,7 @@ function fooBar(a
 , b
 , c
 ) {
-  return true
+  return b + c
 }
 
 fooBar(
@@ -19,7 +19,7 @@ function twoBar(
   a
 , b, c
 ) {
-  return true
+  return c
 }
 
 twoBar(

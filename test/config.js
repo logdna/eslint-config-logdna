@@ -17,4 +17,11 @@ test('valid config', async (t) => {
 
   const [result] = await linter.lintText(code)
   t.equal(result.errorCount, 0, 'error count')
+  // provide more context for failures by emitting a separate `fail`
+  // for each unexpected linting error
+  if (result.messages.length) {
+    for (const {message} of result.messages) {
+      t.fail(message)
+    }
+  }
 }).catch(threw)

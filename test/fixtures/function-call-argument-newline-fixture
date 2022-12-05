@@ -3,7 +3,7 @@
 module.exports = fooBar
 
 function fooBar(a, b, c) {
-  return true
+  return b + c
 }
 
 fooBar('asdf',
