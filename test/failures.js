@@ -30,7 +30,31 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
     )
   })
 
-  t.test('no-multlintFilesiple-empty-lines', async (t) => {
+  t.test('no-unused-vars for arguments', async (t) => {
+    const [result] = await linter.lintFiles(['no-unused-args-fixture'])
+    t.equal(result.errorCount, 2, 'error count')
+
+    const messages = result.messages
+    t.ok(
+      messages.every(({ruleId}) => {
+        return ruleId === 'no-unused-vars'
+      })
+    , 'errors from expected rule'
+    )
+
+    t.match(
+      messages[0].message
+    , "'c' is defined but never used."
+    , 'message expected for unused after-used'
+    )
+    t.match(
+      messages[1].message
+    , "'r' is defined but never used."
+    , 'message expected for unused'
+    )
+  })
+
+  t.test('no-multiple-empty-lines', async (t) => {
     const [result] = await linter.lintFiles(['no-multiple-empty-lines-fixture'])
     t.equal(result.errorCount, 1, 'error count')
     const messages = result.messages
@@ -49,7 +73,7 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
     t.equal(result.messages[0].ruleId, 'no-debugger', 'missing newline')
   })
 
-  t.test('pluglintFilesin-logdna', async (t) => {
+  t.test('plugin-logdna', async (t) => {
     const [result] = await linter.lintFiles(['logdna-plugin-fixture'])
     const messages = result.messages
     t.equal(result.errorCount, 6, 'error count')

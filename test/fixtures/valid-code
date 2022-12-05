@@ -56,7 +56,7 @@ async function doWork(opts) {
   console.log('ready', 11 + 33)
 })()
 
-function plugin(opts) {
+function plugin() {
   if (this.is_new) {
     this.id = Date.now()
   } else {
