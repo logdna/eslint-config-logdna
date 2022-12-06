@@ -1,5 +1,18 @@
 ## Changelog
 
+# [7.0.0](https://github.com/logdna/eslint-config-logdna/compare/v6.1.2...v7.0.0) (2022-12-06)
+
+
+### Bug Fixes
+
+* **no-unused-vars**: enforce rule for unused arguments [697525e](https://github.com/logdna/eslint-config-logdna/commit/697525e034c21271b7247f692742e56d437c8a44) - Mike Del Tito, closes: [#26](https://github.com/logdna/eslint-config-logdna/issues/26)
+
+
+### **BREAKING CHANGES**
+
+* **no-unused-vars:** all named arguments and all positional arguments
+_after the last used argument_ will now be checked.
+
 ## [6.1.2](https://github.com/logdna/eslint-config-logdna/compare/v6.1.1...v6.1.2) (2022-09-19)
 
 
