@@ -144,8 +144,7 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
   t.test('function-call-argument-newline', async (t) => {
     const [result] = await linter.lintFiles(['function-call-argument-newline-fixture'])
     const messages = result.messages
-    t.equal(result.errorCount, 3, 'error count')
-
+    t.equal(result.errorCount, 4, 'error count')
     t.equal(
       messages[0].message
     , 'Expected newline after \'(\'.'
@@ -154,12 +153,18 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
 
     t.equal(
       messages[1].message
+    , 'Expected indentation of 14 spaces but found 0.'
+    , 'fooBar call 1: arguments should align on first punctuation'
+    )
+
+    t.equal(
+      messages[2].message
     , 'Expected newline between arguments/params.'
     , 'fooBar call 2: second param should be followed by newline'
     )
 
     t.equal(
-      messages[2].message
+      messages[3].message
     , 'There should be a line break after this argument.'
     , 'fooBar call 2: space after second param should be newline'
     )
