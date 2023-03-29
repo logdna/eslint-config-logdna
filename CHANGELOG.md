@@ -1,5 +1,12 @@
 ## Changelog
 
+## [7.0.2](https://github.com/logdna/eslint-config-logdna/compare/v7.0.1...v7.0.2) (2023-03-29)
+
+
+### Chores
+
+* **deps**: eslint-plugin-sensible@3.0.0 [13937d7](https://github.com/logdna/eslint-config-logdna/commit/13937d797130b335c4f9d25043849c66206c56b9) - Eric Satterwhite
+
 ## [7.0.1](https://github.com/logdna/eslint-config-logdna/compare/v7.0.0...v7.0.1) (2023-03-08)
 
 
