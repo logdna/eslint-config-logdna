@@ -7,7 +7,12 @@ def CURRENT_BRANCH = [env.CHANGE_BRANCH, env.BRANCH_NAME]?.find{branch -> branch
 def DEFAULT_BRANCH = 'main'
 
 pipeline {
-  agent none
+    agent {
+        node {
+            label 'ec2-fleet'
+            customWorkspace("/tmp/workspace/${env.BUILD_TAG}")
+        }
+    }
 
   options {
     timestamps()
@@ -36,12 +41,13 @@ pipeline {
         axes {
           axis {
             name 'NODE_VERSION'
-            values '12', '14', '16'
+            values '16', '18', '20'
           }
         }
 
         agent {
           docker {
+            label 'ec2-fleet'
             image "us.gcr.io/logdna-k8s/node:${NODE_VERSION}-ci"
           }
         }
@@ -91,7 +97,8 @@ pipeline {
 
       agent {
         docker {
-          image "us.gcr.io/logdna-k8s/node:12-ci"
+          image "us.gcr.io/logdna-k8s/node:14-ci"
+          label 'ec2-fleet'
           customWorkspace "${PROJECT_NAME}-${BUILD_NUMBER}"
         }
       }
@@ -123,6 +130,7 @@ pipeline {
       agent {
         docker {
           image "us.gcr.io/logdna-k8s/node:12-ci"
+          label 'ec2-fleet'
           customWorkspace "${PROJECT_NAME}-${BUILD_NUMBER}"
         }
       }
