@@ -182,7 +182,8 @@
     "no-unused-vars": [2, {
       "vars": "all",
       "args": "after-used",
-      "ignoreRestSiblings": true
+      "ignoreRestSiblings": true,
+      "varsIgnorePattern": "^_$"
     }],
     "no-use-before-define": [2, {
       "functions": false

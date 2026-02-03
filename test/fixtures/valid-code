@@ -72,6 +72,8 @@ function useLotsOfParameters(
   console.log(a)
   console.log(b)
   console.log(c)
+  const [value, _] = c.split(' ')
+  console.log(value)
 }
 
 useLotsOfParameters(
