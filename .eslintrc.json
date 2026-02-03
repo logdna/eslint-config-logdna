@@ -94,7 +94,9 @@
     }],
     "linebreak-style": ["error", "unix"],
     "max-len": [2, 90, {
-      "ignoreComments": true
+      "ignoreComments": true,
+      "ignoreUrls": true,
+      "ignoreTemplateLiterals": true
     }],
     "no-alert": 2,
     "no-async-promise-executor": [2],
