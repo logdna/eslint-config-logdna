@@ -1,5 +1,17 @@
 ## Changelog
 
+# [7.1.0](https://github.com/logdna/eslint-config-logdna/compare/v7.0.3...v7.1.0) (2026-02-03)
+
+
+### Chores
+
+* **rules**: update max length rule to ignore urls and template strings [a45c9cb](https://github.com/logdna/eslint-config-logdna/commit/a45c9cb66bdb89b84657ef0756fb81662eb6e913) - Eric Satterwhite
+
+
+### Features
+
+* **no-unused-vars**: ignore _ variables [ade9f1e](https://github.com/logdna/eslint-config-logdna/commit/ade9f1ea56938e72a3d02799241d78950f5d2236) - Eric Satterwhite
+
 ## [7.0.3](https://github.com/logdna/eslint-config-logdna/compare/v7.0.2...v7.0.3) (2023-12-12)
 
 
