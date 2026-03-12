@@ -7,6 +7,10 @@ check-coverage: true
 reporter: classic
 nyc-arg:
 - --all=true
+- --exclude=example/**
+- --exclude=test/**
+- --exclude=*.config.js
+- --exclude=template/**
 output-file: coverage/.tap-output
 coverage-report:
 - text

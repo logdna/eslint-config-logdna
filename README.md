@@ -1,73 +1,63 @@
-# `eslint-config-logdna`
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+# eslint-config-logdna
 
-This package contains the `eslint` configuration that LogDNA prefers to use across all projects, public and private.
+[![npm version](https://badge.fury.io/js/eslint-config-logdna.svg)](https://badge.fury.io/js/eslint-config-logdna)
+[![Build Status](https://github.com/logdna/eslint-config-logdna/actions/workflows/ci.yml/badge.svg)](https://github.com/logdna/eslint-config-logdna/actions)
+[![Coverage Status](https://coveralls.io/repos/github/logdna/eslint-config-logdna/badge.svg?branch=main)](https://coveralls.io/github/logdna/eslint-config-logdna?branch=main)
+
+LogDNA's preferred ESLint configuration for Node.js projects. Compatible with ESLint 9+ and 10+.
 
 ## Installation
 
-**Requires eslint also**
-
-We do not use peer dependencies, so make sure that `eslint` is also installed as a dev dependency.
-
-```shell
-npm install eslint-config-logdna eslint --save-dev
+```bash
+npm install --save-dev eslint-config-logdna eslint@latest
 ```
 
 ## Usage
 
-Once the package is installed, there are a few easy steps to get it executing within a project.
+### ESLint 9+ (Flat Config Format) - Recommended
 
-### Set up `npm` scripts
-
-It is best if `eslint` is configured as a script in `package.json` and hooked in as `pre` scripts where necessary.
+Create a file named `eslint.config.js` in your project root:
 
 ```javascript
-"scripts": {
-  "lint": "eslint .",
-  "pretest": "npm run lint"
+// eslint.config.js
+const logdna = require('eslint-config-logdna')
+
+module.exports = [
+  {
+    files: ['**/*.js']
+  , extends: [logdna]
+  }
+, {
+    // Additional configuration for this project
+    ignores: ['example/**', 'test/fixtures/**']
+  }
+]
+```
+
+### Legacy ESLint < 9
+
+If you are using an older version of ESLint, you can still use the old format:
+
+```json
+{
+  "extends": ["logdna"]
 }
 ```
 
-### Configuration in `package.json`
+**Note**: The legacy format is deprecated and will be removed in future versions.
 
-Add this configuration section to the `package.json` file of the target project.  The `ignorePatterns` can be set to any directory
-specific to the project that needs linting.  The `ignorePatterns` is only important for directories that may contain `.js`
-files since `eslint` will only lint javascript files by default.
+## Migration Guide
 
-```javascript
-"eslintConfig": {
-  "extends": [
-    "logdna"
-  ],
-  "root": true,
-  "ignorePatterns": [
-    "node_modules/",
-    "test/",
-    "coverage/"
-  ]
-}
-```
+See [MIGRATION.md](./doc/MIGRATION.md) for detailed migration instructions from the older `.eslintrc.json` format to the new flat config format.
 
-## Contributors ✨
+## Examples
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+See [EXAMPLES.md](./doc/EXAMPLES.md) for various usage examples including Node.js, ES6+, and ESM projects.
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="http://codedependant.net/"><img src="https://avatars.githubusercontent.com/u/148561?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eric Satterwhite</b></sub></a><br /><a href="https://github.com/logdna/eslint-config-logdna/commits?author=esatterwhite" title="Documentation">📖</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=esatterwhite" title="Code">💻</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=esatterwhite" title="Tests">⚠️</a> <a href="#maintenance-esatterwhite" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/darinspivey"><img src="https://avatars.githubusercontent.com/u/1874788?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Darin Spivey</b></sub></a><br /><a href="https://github.com/logdna/eslint-config-logdna/commits?author=darinspivey" title="Documentation">📖</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=darinspivey" title="Code">💻</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=darinspivey" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://github.com/mdeltito"><img src="https://avatars.githubusercontent.com/u/69520?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mike Del Tito</b></sub></a><br /><a href="https://github.com/logdna/eslint-config-logdna/commits?author=mdeltito" title="Documentation">📖</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=mdeltito" title="Code">💻</a> <a href="https://github.com/logdna/eslint-config-logdna/commits?author=mdeltito" title="Tests">⚠️</a> <a href="#maintenance-mdeltito" title="Maintenance">🚧</a></td>
-  </tr>
-</table>
+## Extending This Config
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+See [EXTENDING.md](./doc/EXTENDING.md) for instructions on creating custom configurations based on this one.
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+## License
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+MIT

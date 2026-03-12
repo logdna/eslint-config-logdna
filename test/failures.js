@@ -3,22 +3,23 @@
 const path = require('path')
 const {ESLint} = require('eslint')
 const {test, threw} = require('tap')
+const config = require('../index.js')
 
 test('Invalid linting for larger code blocks read from fixtures', async (t) => {
   const linter = new ESLint({
-    useEslintrc: false
+    overrideConfigFile: true
   , cwd: path.join(__dirname, 'fixtures')
-  , overrideConfigFile: '../../.eslintrc.json'
+  , overrideConfig: config
   })
 
   t.test('no-eol', async (t) => {
-    const [result] = await linter.lintFiles(['no-eol-fixture'])
+    const [result] = await linter.lintFiles(['no-eol-fixture.js'])
     t.equal(result.errorCount, 1, 'error count')
     t.equal(result.messages[0].ruleId, 'eol-last', 'missing newline')
   })
 
   t.test('max-len', async (t) => {
-    const [result] = await linter.lintFiles(['max-len-fixture'])
+    const [result] = await linter.lintFiles(['max-len-fixture.js'])
     t.equal(result.errorCount, 1, 'error count')
     const messages = result.messages
 
@@ -31,7 +32,7 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
   })
 
   t.test('no-unused-vars for arguments', async (t) => {
-    const [result] = await linter.lintFiles(['no-unused-args-fixture'])
+    const [result] = await linter.lintFiles(['no-unused-args-fixture.js'])
     t.equal(result.errorCount, 2, 'error count')
 
     const messages = result.messages
@@ -55,7 +56,7 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
   })
 
   t.test('no-multiple-empty-lines', async (t) => {
-    const [result] = await linter.lintFiles(['no-multiple-empty-lines-fixture'])
+    const [result] = await linter.lintFiles(['no-multiple-empty-lines-fixture.js'])
     t.equal(result.errorCount, 1, 'error count')
     const messages = result.messages
 
@@ -68,13 +69,13 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
   })
 
   t.test('no-debugger', async (t) => {
-    const [result] = await linter.lintFiles(['no-debugger-fixture'])
+    const [result] = await linter.lintFiles(['no-debugger-fixture.js'])
     t.equal(result.errorCount, 1, 'error count')
     t.equal(result.messages[0].ruleId, 'no-debugger', 'missing newline')
   })
 
   t.test('plugin-logdna', async (t) => {
-    const [result] = await linter.lintFiles(['logdna-plugin-fixture'])
+    const [result] = await linter.lintFiles(['logdna-plugin-fixture.js'])
     const messages = result.messages
     t.equal(result.errorCount, 6, 'error count')
 
@@ -142,7 +143,7 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
   })
 
   t.test('function-call-argument-newline', async (t) => {
-    const [result] = await linter.lintFiles(['function-call-argument-newline-fixture'])
+    const [result] = await linter.lintFiles(['function-call-argument-newline-fixture.js'])
     const messages = result.messages
     t.equal(result.errorCount, 4, 'error count')
     t.equal(
@@ -171,7 +172,7 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
   })
 
   t.test('function-paren-newline', async (t) => {
-    const [result] = await linter.lintFiles(['function-paren-newline-fixture'])
+    const [result] = await linter.lintFiles(['function-paren-newline-fixture.js'])
     const messages = result.messages
     t.equal(result.errorCount, 2, 'error count')
 
@@ -191,17 +192,19 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
 
 test('Invalid linting with quick-and-dirty inline code', async (t) => {
   const linter = new ESLint({
-    useEslintrc: false
+    overrideConfigFile: true
   , cwd: __dirname
-  , overrideConfigFile: '../.eslintrc.json'
-  , overrideConfig: {
-      rules: {
-        'strict': 'off'
-      , 'sensible/indent': 'off'
-      , 'eol-last': 'off'
-      , 'no-unused-vars': 'off'
+  , overrideConfig: [
+      ...config
+    , {
+        rules: {
+          'strict': 'off'
+        , 'sensible/indent': 'off'
+        , 'eol-last': 'off'
+        , 'no-unused-vars': 'off'
+        }
       }
-    }
+    ]
   })
 
   t.test('arrow-parens', async (t) => {
