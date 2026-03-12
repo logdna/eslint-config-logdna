@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": false,
   "scripts": {
-    "lint": "eslint ./",
+    "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "tools/test.sh",
     "tap": "tap",
@@ -34,16 +34,32 @@
     ],
     "extends": "semantic-release-config-logdna"
   },
+  "peerDependencies": {
+    "eslint": ">= 9"
+  },
   "devDependencies": {
-    "eslint": "^8.1.0",
+    "eslint": "^9.0.0",
     "semantic-release": "^17.4.2",
     "semantic-release-config-logdna": "^1.1.1",
     "tap": "^14.10.7",
     "tap-xunit": "^2.4.1"
   },
   "dependencies": {
-    "eslint-plugin-logdna": "^2.0.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-sensible": "^3.1.0"
+    "eslint-plugin-logdna": "^3.0.0",
+    "eslint-plugin-n": "^17.0.0",
+    "eslint-plugin-sensible": "^4.0.0"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "logdna",
+    "mezmo",
+    "javascript",
+    "nodejs",
+    "styleguide"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
