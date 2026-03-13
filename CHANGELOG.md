@@ -1,5 +1,19 @@
 ## Changelog
 
+# [8.0.0](https://github.com/logdna/eslint-config-logdna/compare/v7.1.0...v8.0.0) (2026-03-13)
+
+
+### Chores
+
+* **ci**: update tested node versions [1d59864](https://github.com/logdna/eslint-config-logdna/commit/1d59864212f93e0c98139ac9aa4cf434d2862a42) - Eric Satterwhite
+* **deps**: eslint@9 [5a4e646](https://github.com/logdna/eslint-config-logdna/commit/5a4e6468f3205f11830f912b79ac56c56e43bbdf) - Eric Satterwhite, closes: [#37](https://github.com/logdna/eslint-config-logdna/issues/37)
+
+
+### **BREAKING CHANGES**
+
+* **deps:** minimum eslint version >=9
+* **deps:** minimum node version >= 18
+
 # [7.1.0](https://github.com/logdna/eslint-config-logdna/compare/v7.0.3...v7.1.0) (2026-02-03)
 
 
