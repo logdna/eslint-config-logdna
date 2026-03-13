@@ -1,5 +1,12 @@
 ## Changelog
 
+## [8.0.1](https://github.com/logdna/eslint-config-logdna/compare/v8.0.0...v8.0.1) (2026-03-13)
+
+
+### Documentation
+
+* **wiki**: restore the contributors block [fc1d839](https://github.com/logdna/eslint-config-logdna/commit/fc1d839486bf18ae21b4e069a2913d6e3ed1f272) - Eric Satterwhite
+
 # [8.0.0](https://github.com/logdna/eslint-config-logdna/compare/v7.1.0...v8.0.0) (2026-03-13)
 
 
