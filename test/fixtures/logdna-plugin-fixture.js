@@ -1,7 +1,7 @@
 'use strict'
 
 const test = require('./test/basic')
-const net = require('net')
+const net = require('node:net')
 
 test('fake test', async (t) => {
   t.ok(net.isIP('12.34.56.78'))

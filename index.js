@@ -1,5 +1,6 @@
 'use strict'
 
+/* eslint n/global-require: "off" */
 // ESLint flat config for LogDNA/Mezmo projects
 // Compatible with ESLint 9+ and 10+
 const base = {
@@ -338,6 +339,13 @@ const base = {
   , 'yield-star-spacing': 'off'
   , 'n/no-deprecated-api': 'error'
   , 'n/handle-callback-err': ['error', '^(error|err|er)']
+  , 'n/prefer-node-protocol': 'error'
+  , 'n/global-require': 'error'
+  , 'n/no-process-env': 'error'
+  , 'n/no-new-require': 'error'
+  , 'n/exports-style': ['error', 'module.exports', {
+      allowBatchAssign: false
+    }]
   , 'sensible/indent': ['error', 2, {
       FunctionExpression: {
         parameters: 'first'

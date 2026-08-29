@@ -1,6 +1,6 @@
 'use strict'
 
-const path = require('path')
+const path = require('node:path')
 const {ESLint} = require('eslint')
 const {test, threw} = require('tap')
 const config = require('../index.js')
@@ -186,6 +186,71 @@ test('Invalid linting for larger code blocks read from fixtures', async (t) => {
       messages[1].message
     , 'Expected newline between arguments/params.'
     , 'twoBar definition: all params should be on own lines'
+    )
+  })
+
+  t.test('n/prefer-node-protocol', async (t) => {
+    const [result] = await linter.lintFiles(['prefer-node-protocol-fixture.js'])
+    t.equal(result.errorCount, 1, 'error count')
+
+    const messages = result.messages
+    t.equal(messages[0].ruleId, 'n/prefer-node-protocol', 'node: protocol preferred')
+    t.equal(
+      messages[0].message
+    , 'Prefer `node:fs` over `fs`.'
+    , 'message expected for bare builtin specifier'
+    )
+  })
+
+  t.test('n/global-require', async (t) => {
+    const [result] = await linter.lintFiles(['global-require-fixture.js'])
+    t.equal(result.errorCount, 1, 'error count')
+
+    const messages = result.messages
+    t.equal(messages[0].ruleId, 'n/global-require', 'require must be top-level')
+    t.equal(
+      messages[0].message
+    , 'Unexpected require().'
+    , 'message expected for non-global require'
+    )
+  })
+
+  t.test('n/no-process-env', async (t) => {
+    const [result] = await linter.lintFiles(['no-process-env-fixture.js'])
+    t.equal(result.errorCount, 1, 'error count')
+
+    const messages = result.messages
+    t.equal(messages[0].ruleId, 'n/no-process-env', 'process.env is disallowed')
+    t.equal(
+      messages[0].message
+    , 'Unexpected use of process.env.'
+    , 'message expected for process.env access'
+    )
+  })
+
+  t.test('n/no-new-require', async (t) => {
+    const [result] = await linter.lintFiles(['no-new-require-fixture.js'])
+    t.equal(result.errorCount, 1, 'error count')
+
+    const messages = result.messages
+    t.equal(messages[0].ruleId, 'n/no-new-require', 'new require() is disallowed')
+    t.equal(
+      messages[0].message
+    , 'Unexpected use of new with require.'
+    , 'message expected for new require()'
+    )
+  })
+
+  t.test('n/exports-style', async (t) => {
+    const [result] = await linter.lintFiles(['exports-style-fixture.js'])
+    t.equal(result.errorCount, 1, 'error count')
+
+    const messages = result.messages
+    t.equal(messages[0].ruleId, 'n/exports-style', 'module.exports style enforced')
+    t.equal(
+      messages[0].message
+    , 'Unexpected access to \'exports\'. Use \'module.exports\' instead.'
+    , 'message expected for exports.foo assignment'
     )
   })
 }).catch(threw)
