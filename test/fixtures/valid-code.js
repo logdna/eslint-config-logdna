@@ -2,9 +2,9 @@
 
 // This is a very very long comment that should probably be on multiple line. But comments are ignored so this will not cause an error when the linter actually runs
 const path = require('node:path')
-const fs = require('fs')
-const {promisify} = require('util')
-const crypto = require('crypto')
+const fs = require('node:fs')
+const {promisify} = require('node:util')
+const crypto = require('node:crypto')
 
 const readFile = promisify(fs.readFile)
 const EXP = /\d+/

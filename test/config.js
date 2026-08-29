@@ -1,8 +1,8 @@
 'use strict'
 
-const path = require('path')
-const fs = require('fs')
-const {promisify} = require('util')
+const path = require('node:path')
+const fs = require('node:fs')
+const {promisify} = require('node:util')
 const {test, threw} = require('tap')
 const {ESLint} = require('eslint')
 const config = require('../index.js')
