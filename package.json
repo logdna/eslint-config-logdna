@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "eslint-plugin-logdna": "^3.0.0",
-    "eslint-plugin-n": "^17.0.0",
+    "eslint-plugin-n": "^18.3.0",
     "eslint-plugin-sensible": "^4.0.0"
   },
   "keywords": [
