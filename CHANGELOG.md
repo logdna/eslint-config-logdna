@@ -1,5 +1,30 @@
 ## Changelog
 
+# [9.0.0](https://github.com/logdna/eslint-config-logdna/compare/v8.0.1...v9.0.0) (2026-08-31)
+
+
+### Bug Fixes
+
+* **ci**: Update node versions for latest 3 [e86b511](https://github.com/logdna/eslint-config-logdna/commit/e86b5110603cd04ed2a6e1af8c1713b3ec86a0e4) - Eric Satterwhite
+
+
+### Features
+
+* **rules**: update base config with newer nodejs rules [7e80abb](https://github.com/logdna/eslint-config-logdna/commit/7e80abb73f94df145f9f0a96eb0ad96c7cd1f751) - Eric Satterwhite
+
+
+### Miscellaneous
+
+* chore(deps) eslint-plugin-n@18.3.0 [2c3b5e1](https://github.com/logdna/eslint-config-logdna/commit/2c3b5e14934d430e608259f1f1dd66d1dc8943a7) - Eric Satterwhite
+
+
+### **BREAKING CHANGES**
+
+* **rules:** node builtin modules must use node: prefix
+* **rules:** cannot use `new` on a require statement
+* **rules:** no direct usage of process.env
+* **rules:** require statement are expected to be at top of module
+
 ## [8.0.1](https://github.com/logdna/eslint-config-logdna/compare/v8.0.0...v8.0.1) (2026-03-13)
 
 
